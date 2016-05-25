@@ -347,7 +347,6 @@ public class PlayerHaterPlugin extends CordovaPlugin implements OnAudioInterrupt
 			}
 		}
 
-		file = "file://" + file;
 		_playAudio(file, title, artist, imageUrl, position, audioJson, false);
 
 		return true;
