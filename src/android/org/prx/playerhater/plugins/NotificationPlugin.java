@@ -26,7 +26,7 @@ import android.os.Build;
 
 import org.prx.playerhater.util.Log;
 import org.prx.playerhater.PlayerHater;
-import de.radiosaw.radiosawiphone.R;
+import com.aranja.sprotaheimur.R;
 import org.prx.playerhater.wrappers.ServicePlayerHater;
 
 @TargetApi(Build.VERSION_CODES.CUPCAKE)

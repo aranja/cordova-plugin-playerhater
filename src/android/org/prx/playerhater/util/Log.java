@@ -15,7 +15,7 @@
  ******************************************************************************/
 package org.prx.playerhater.util;
 
-import de.radiosaw.radiosawiphone.BuildConfig;
+import com.aranja.sprotaheimur.BuildConfig;
 
 public class Log {
 	

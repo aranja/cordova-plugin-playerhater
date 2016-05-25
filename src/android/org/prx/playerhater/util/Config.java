@@ -21,7 +21,7 @@ import java.util.Set;
 
 import org.prx.playerhater.PlayerHater;
 import org.prx.playerhater.PlayerHaterPlugin;
-import de.radiosaw.radiosawiphone.R;
+import com.aranja.sprotaheimur.R;
 import org.prx.playerhater.plugins.PluginCollection;
 
 import android.content.Context;

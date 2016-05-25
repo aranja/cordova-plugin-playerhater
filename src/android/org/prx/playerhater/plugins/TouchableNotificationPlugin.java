@@ -27,7 +27,7 @@ import android.view.KeyEvent;
 import android.widget.RemoteViews;
 
 import org.prx.playerhater.BroadcastReceiver;
-import de.radiosaw.radiosawiphone.R;
+import com.aranja.sprotaheimur.R;
 import org.prx.playerhater.Song;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)

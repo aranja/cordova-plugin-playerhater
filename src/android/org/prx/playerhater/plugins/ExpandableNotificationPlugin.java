@@ -21,7 +21,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.widget.RemoteViews;
 
-import de.radiosaw.radiosawiphone.R;
+import com.aranja.sprotaheimur.R;
 
 @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 public class ExpandableNotificationPlugin extends TouchableNotificationPlugin {
