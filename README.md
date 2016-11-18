@@ -11,6 +11,12 @@
 ```javascript
   window.audioplayer.unpause(sucessCallback, failureCallback);
 ```
+
+- Add an togglePlayPause function to the interface
+```javascript
+  window.audioplayer.togglePlayPause(sucessCallback, failureCallback);
+```
+
 ### Platform Support
 
 This plugin supports PhoneGap/Cordova apps running on both iOS and Android.
