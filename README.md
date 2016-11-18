@@ -4,7 +4,7 @@
 - Fix for iOS 10 issue
 
 # PlayerHater Audio Player PhoneGap/Cordova Plugin
-### This project is forked from pouriaMaleki and wnyc with minor alternation.
+### This project is forked from yogitunes, faytom, pouriaMaleki and wnyc with minor alternation.
 
 
 - Add an unpause function to the interface
@@ -33,7 +33,7 @@ https://github.com/PRX/PRXPlayer
 
 2. Install this plugin using PhoneGap/Cordova cli:
 
-        cordova local plugin add https://github.com/faytom/cordova-plugin-playerhater.git
+        cordova plugin add https://github.com/ariba/cordova-plugin-playerhater.git
 
 3. For android you should change all packages with suffix `.R` and `.BuildConfig`, watch my commit here
 
