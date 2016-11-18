@@ -34,6 +34,7 @@
 - (BOOL)startPlayingRemoteFile:(NSString*)file position:(int)position;
 - (void)stopPlaying;
 - (void)pausePlaying;
+- (void)togglePlayPause;
 - (void)unpausePlaying;
 - (void)getAudioState;
 
