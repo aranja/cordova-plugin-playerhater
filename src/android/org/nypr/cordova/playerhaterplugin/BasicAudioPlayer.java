@@ -270,7 +270,16 @@ public class BasicAudioPlayer implements PlayerHaterListener  {
 			}
 		}
 	}
-	
+
+
+	public void resumePlaying() {
+		if (mHater.isPlaying() && mHater.getQueuePosition() > 0) {
+			Log.d(LOG_TAG, "Audio already playing -- no need to resume. isPlaying=" + mHater.isPlaying() + "; getQueuePosition()=" + mHater.getQueuePosition());
+		} else {
+			mHater.play();
+		}
+	}
+
 	public void pausePlaying(){
 
 		// make sure audio is playing

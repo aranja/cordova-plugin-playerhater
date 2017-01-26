@@ -280,6 +280,18 @@ public class PlayerHaterPlugin extends CordovaPlugin implements OnAudioInterrupt
 				pluginResult.setKeepCallback(true);
 				callbackContext.sendPluginResult(pluginResult);
 
+			}else if (action.equals("togglePlayPause")) {
+
+				if (mAudioPlayer.isPlaying() === true) {
+					_pauseAudio();
+				} else {
+					_resumeAudio();
+				}
+
+				PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
+				pluginResult.setKeepCallback(true);
+				callbackContext.sendPluginResult(pluginResult);
+
 			}else{
 				callbackContext.error(LOG_TAG + " error: invalid action (" + action + ")");
 				ret=false;
@@ -385,6 +397,10 @@ public class PlayerHaterPlugin extends CordovaPlugin implements OnAudioInterrupt
 		mAudioPlayer.startPlaying(file, title, artist, url, position, audioJson, isStream);
 		//this.setAudioInfo(info);
 
+	}
+
+	protected void _resumeAudio() throws RemoteException{
+		mAudioPlayer.resumePlaying();
 	}
 
 	protected void _pauseAudio() throws RemoteException{
