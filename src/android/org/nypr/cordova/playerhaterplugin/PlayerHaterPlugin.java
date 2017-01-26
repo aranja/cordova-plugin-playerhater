@@ -282,7 +282,7 @@ public class PlayerHaterPlugin extends CordovaPlugin implements OnAudioInterrupt
 
 			}else if (action.equals("togglePlayPause")) {
 
-				if (mAudioPlayer.isPlaying() === true) {
+				if (mAudioPlayer.isPlaying() == true) {
 					_pauseAudio();
 				} else {
 					_resumeAudio();
