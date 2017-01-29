@@ -161,3 +161,12 @@ https://github.com/pouriaMaleki/cordova-plugin-playerhater/commit/c33862e3b078e6
     MEDIA_STOPPED   : 4
     MEDIA_LOADING   : 5
     MEDIA_COMPLETED : 6
+
+
+## Android specific
+
+Add the following in `build-extras.gradle` in `platforms/android/` to support Image URL in Notification
+
+    dependencies {
+        compile 'com.squareup.picasso:picasso:2.3.2'
+    }
