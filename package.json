@@ -1,0 +1,19 @@
+{
+  "name": "cordova-plugin-playerhater",
+  "version": "1.0.0",
+  "description": "PlayerHater Audio Player PhoneGap/Cordova Plugin",
+  "main": "www/audioplayer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rockykitamura/cordova-plugin-playerhater.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rockykitamura/cordova-plugin-playerhater/issues"
+  },
+  "homepage": "https://github.com/rockykitamura/cordova-plugin-playerhater#readme"
+}

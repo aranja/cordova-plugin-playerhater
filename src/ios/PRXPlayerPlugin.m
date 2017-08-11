@@ -225,6 +225,28 @@ void remoteControlReceivedWithEventImp(id self, SEL _cmd, UIEvent * event) {
     [self _sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+- (void)unpause:(CDVInvokedUrlCommand*)command
+{
+
+    NSLog (@"PRXPlayer Plugin unpausing playback");
+    [self _create];
+    [self->mAudioHandler unpausePlaying];
+
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self _sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+- (void)togglePlayPause:(CDVInvokedUrlCommand*)command
+{
+
+    NSLog (@"PRXPlayer Plugin togglePlayPause playback");
+    [self _create];
+    [self->mAudioHandler togglePlayPause];
+
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self _sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 - (void)playremotefile:(CDVInvokedUrlCommand*)command
 {
     CDVPluginResult* pluginResult = nil;

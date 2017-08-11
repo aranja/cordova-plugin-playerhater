@@ -1,4 +1,21 @@
+*Changes to Original Upstream*
+
+- Updated Libraries
+- Fix for iOS 10 issue
+
 # PlayerHater Audio Player PhoneGap/Cordova Plugin
+### This project is forked from yogitunes, faytom, pouriaMaleki and wnyc with minor alternation.
+
+
+- Add an unpause function to the interface
+```javascript
+  window.audioplayer.unpause(sucessCallback, failureCallback);
+```
+
+- Add an togglePlayPause function to the interface
+```javascript
+  window.audioplayer.togglePlayPause(sucessCallback, failureCallback);
+```
 
 ### Platform Support
 
@@ -22,7 +39,7 @@ https://github.com/PRX/PRXPlayer
 
 2. Install this plugin using PhoneGap/Cordova cli:
 
-        cordova local plugin add https://github.com/wnyc/cordova-plugin-playerhater.git
+        cordova plugin add https://github.com/ariba/cordova-plugin-playerhater.git
 
 3. For android you should change all packages with suffix `.R` and `.BuildConfig`, watch my commit here
 
@@ -144,3 +161,12 @@ https://github.com/pouriaMaleki/cordova-plugin-playerhater/commit/c33862e3b078e6
     MEDIA_STOPPED   : 4
     MEDIA_LOADING   : 5
     MEDIA_COMPLETED : 6
+
+
+## Android specific
+
+Add the following in `build-extras.gradle` in `platforms/android/` to support Image URL in Notification
+
+    dependencies {
+        compile 'com.squareup.picasso:picasso:2.3.2'
+    }

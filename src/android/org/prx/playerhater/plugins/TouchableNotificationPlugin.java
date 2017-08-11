@@ -25,7 +25,10 @@ import android.net.Uri;
 import android.os.Build;
 import android.view.KeyEvent;
 import android.widget.RemoteViews;
+import android.os.Looper;
+import android.os.Handler;
 
+import com.squareup.picasso.Picasso;
 import org.prx.playerhater.BroadcastReceiver;
 import com.aranja.sprotaheimur.R;
 import org.prx.playerhater.Song;
@@ -199,9 +202,18 @@ public class TouchableNotificationPlugin extends NotificationPlugin {
         }
     }
 
-    protected void setImageViewUri(int id, Uri contentUri) {
+    protected void setImageViewUri(int id, final Uri contentUri) {
         if (mNotificationView != null && contentUri != null) {
-            mNotificationView.setImageViewUri(id, contentUri);
+            // mNotificationView.setImageViewUri(id, contentUri);
+            Handler uiHandler = new Handler(Looper.getMainLooper());
+            uiHandler.post(new Runnable(){
+                @Override
+                public void run() {
+                    Picasso.with(getContext()).load(contentUri.toString())
+                            .into(mNotificationView, id, NOTIFICATION_NU, getNotification());
+                }
+            });
         }
+
     }
 }

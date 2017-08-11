@@ -23,6 +23,7 @@ import android.net.ConnectivityManager;
 import android.os.Environment;
 import android.os.RemoteException;
 import android.util.Log;
+import android.view.WindowManager;
 
 
 public class PlayerHaterPlugin extends CordovaPlugin implements OnAudioInterruptListener, OnAudioStateUpdatedListener{
@@ -60,6 +61,8 @@ public class PlayerHaterPlugin extends CordovaPlugin implements OnAudioInterrupt
 		// }
 		// mCachedWebView = webView;
 
+		cordova.getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
 		Log.d(LOG_TAG, "PlayerHater Plugin initialized");
 	}
 
@@ -68,6 +71,15 @@ public class PlayerHaterPlugin extends CordovaPlugin implements OnAudioInterrupt
 		Log.d(LOG_TAG, "PlayerHater Plugin onReset");
 		_checkForWakeup(cordova.getActivity().getIntent()); // invoked when the activity is freshly launched...
 		super.onReset();
+	}
+
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		if (mAudioPlayer != null) {
+			mAudioPlayer.stopPlaying();
+		}
 	}
 
 	@Override
@@ -280,6 +292,18 @@ public class PlayerHaterPlugin extends CordovaPlugin implements OnAudioInterrupt
 				pluginResult.setKeepCallback(true);
 				callbackContext.sendPluginResult(pluginResult);
 
+			}else if (action.equals("togglePlayPause")) {
+
+				if (mAudioPlayer.isPlaying() == true) {
+					_pauseAudio();
+				} else {
+					_resumeAudio();
+				}
+
+				PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
+				pluginResult.setKeepCallback(true);
+				callbackContext.sendPluginResult(pluginResult);
+
 			}else{
 				callbackContext.error(LOG_TAG + " error: invalid action (" + action + ")");
 				ret=false;
@@ -384,6 +408,10 @@ public class PlayerHaterPlugin extends CordovaPlugin implements OnAudioInterrupt
 		mAudioPlayer.startPlaying(file, title, artist, url, position, audioJson, isStream);
 		//this.setAudioInfo(info);
 
+	}
+
+	protected void _resumeAudio() throws RemoteException{
+		mAudioPlayer.resumePlaying();
 	}
 
 	protected void _pauseAudio() throws RemoteException{
